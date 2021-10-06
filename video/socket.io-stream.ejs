@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Calling</title>
+</head>
+
+<body>
+    <video autoplay="true" id="video"></video>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        const socket = io();
+        let name = prompt("Enter the room name");
+
+        function wrongname() {
+            name = prompt("Seriously? That's not a name! enter again!");
+            validator();
+        }
+
+        function validator() {
+            if (!name.match(/^[0-9a-z]+$/)) {
+                wrongname();
+            } else {
+                return true;
+            }
+        }
+        validator();
+        let video = document.getElementById('video');
+        if (navigator.mediaDevices.getUserMedia) {
+            navigator.mediaDevices.getUserMedia({
+                    video: true,
+                    audio: true
+                })
+                .then((stream) => {
+                    video.srcObject = stream;
+                    console.log(stream);
+                    socket.emit("joinRoom", {
+                        name: name,
+                        stream: stream
+                    });
+                })
+                .catch((error) => {
+                    alert("You choose to turn off your video and audio");
+                    location.replace('/');
+                })
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html lang ="utf-8">
+    <title>Login</title> 
+    <head>
+        <style> 
+            .container  
+            {
+                width: 50%;
+	            margin: auto;
+			    border-radius: 5px;
+			    background-color: #f2f2f2;
+			    padding: 20px;
+
+            }
+            .panner 
+            {
+                color: whitesmoke;
+                text-align: center;
+                margin-top: 50px;
+                font-size: 300%;
+            }
+            .buttonclick 
+            {
+			    width: 50%;
+			    padding: 12px;
+			    border: 1px solid #ccc;
+                color: whitesmoke;
+                background-color: rgb(87, 154, 255);
+			    border-radius: 4px;
+			    box-sizing: border-box;
+			    margin-top: 6px;
+                margin-left:200px;
+			    margin-bottom: 14px;
+			    resize: vertical;
+			} 
+            input[type=password]
+            {
+                width: 70%;
+			    padding: 12px;
+			    border: 1px solid #ccc;
+			    border-radius: 4px;
+			    box-sizing: border-box;
+			    margin-top: 6px;
+			    margin-bottom: 12px;
+			    resize: vertical;
+			}
+            input[type=text]
+            {
+                width: 70%;
+			    padding: 12px;
+			    border: 1px solid #ccc;
+			    border-radius: 4px;
+			    box-sizing: border-box;
+			    margin-top: 6px;
+			    margin-bottom: 12px;
+			    resize: vertical;
+			}
+        </style>
+        <script type="text/javascript">
+            function Check()
+            {
+                alert("Đang đăng nhập...");
+                var Name = document.getElementById('Name').Value;
+                var Pass = document.getElementById('Pass').Value;
+                var CheckName = $_GET['name'];
+                var checkpass = $_get['pass'];
+            }
+        </script>
+    </head>
+    <body style="background-color: #333333;">
+        <h1 class="panner"> Login hệ thống </h1>
+        <div class="container">
+            <form>
+                <label for= "Name">Nhập tài khoản : </label>
+                <input type="text" id = "Name" , name ="Name" ,placeholder = "Nhập tài khoản ...">
+                <p> </p> 
+
+                <label for= "Pass">Nhập mật khẩu : </label>
+                <input type="password" id = "Pass" , name ="Pass" ,placeholder = "Nhập mật khẩu ...">
+                <p> </p>
+                
+                <input type="button" class="buttonclick" onclick = "Check()" value="Đăng nhập">
+            </form>
+
+        </div>
+
+    </body>
+
+</html>

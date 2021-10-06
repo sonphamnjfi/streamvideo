@@ -1,0 +1,17 @@
+{
+
+  "Server" : {
+    "settings" :{
+      "port"   : "4000",
+      "socket" : "4001"
+    }
+  },
+
+  "Proxy" : {
+    "settings" :{
+      "port"         : "4002",
+      "storage_path" : "storage"
+    }
+  }
+  
+}
